@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: "roboto";
+        }
+        .visible{
+            visibility: visible;
+        }
+   
+        .invisible {
+            display: none;
+        }
+        .box{
+         
+            width: 25%;
+            height: 25%;
+            text-align: center;
+            
+        }
+        
+  
+
+     
+    
+    </style>
+</head>
+
+<body>
+    <div id="trio" style="font-size: 4em; color: white; padding: 2em;   background-color: #07A2E3;" >
+      
+        <div class="box" id="one">
+       
+  <img width="25%" src="drag-new-logo.png" alt="">
+         </div>
+       
+       
+    </div>
+
+
+    <div id="trio1" class="boxtrio1" style="font-size: 4em; color: white; padding: 2em;     background-color: #08EC94; text-align: center;">
+     
+
+
+          
+        <div class="box" id="two">
+         <img width="25%" src="drag-new-logo.png" alt="">
+
+     
+         </div>
+
+
+
+    </div>
+    <div id="trio2" class="boxtrio2" style="font-size: 4em; color: white; padding: 2em;    background-color: #FCCC37; text-align: center;">
+        <div class="box" id="three">
+         
+         <img width="25%" src="drag-new-logo.png" alt="">
+
+         </div>
+    </div>
+    <div id="trio3" class="boxtrio3" style="font-size: 4em; color: white; padding: 2em;   background-color: #F03474; text-align: center;">
+       end
+    </div>
+
+</body>
+<script>
+
+    window.onload = setEventListener;
+
+    function setEventListener() {
+     
+        document.getElementById('trio').className = 'visible';
+        document.getElementById('trio1').className = 'invisible';
+        document.getElementById('trio2').className = 'invisible';
+        document.getElementById('trio3').className = 'invisible';
+
+        document.getElementById('one').ondrag = showtrio1;
+        document.getElementById('two').ondrag = showtrio2;
+        document.getElementById('three').ondrag = showtrio3;
+
+    }
+
+    function showtrio1() {
+
+        document.getElementById('trio1').className = 'visible';
+        document.getElementById('trio').className = 'invisible';
+        document.getElementById('trio2').className = 'invisible';
+        document.getElementById('trio3').className = 'invisible';
+        document.getElementById('trio1').ondrop = setEventListener;
+        
+
+
+    }
+    function showtrio2() {
+        document.getElementById('trio2').className = 'visible';
+        document.getElementById('trio').className = 'invisible';
+        document.getElementById('trio1').className = 'invisible';
+        document.getElementById('trio3').className = 'invisible';
+        document.getElementById('trio2').ondrop = setEventListener;
+
+
+    }
+    function showtrio3() {
+        document.getElementById('trio3').className = 'visible';
+        document.getElementById('trio').className = 'invisible';
+        document.getElementById('trio1').className = 'invisible';
+        document.getElementById('trio2').className = 'invisible';
+        document.getElementById('trio3').ondrop = setEventListener;
+
+
+    }
+
+
+</script>
+
+</html>
+
